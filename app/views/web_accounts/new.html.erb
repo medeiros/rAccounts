@@ -1,0 +1,8 @@
+<h1>New Web Account</h1>
+
+<%= form_for(@entity, url: web_index_path, html: {method: 'create'}) do |f| %>
+  <%=render "form", f: f %>
+<% end %>
+
+<br />
+<%= link_to 'Back', web_index_path %>

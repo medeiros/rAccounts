@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Raccounts</title>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <script language="javascript">
+    $(function() {
+      $.register_new_web_account_on_ctrlkey('<%=new_web_path%>');
+    });
+  </script>
+
+</head>
+
+<body>
+<div id="topPan">
+	<ul>
+    <li><%= link_to "Home", :root %></li>
+  	<li><%= link_to "Web", :web_index %></li>
+	</ul>
+	
+	<ul class="dropdown">
+	</ul>
+</div>
+<div id="bodytopmainPan">
+  <div id="bodytopPan">
+    <%= yield %>
+  </div>
+</div>
+
+<div id="footermainPan">
+  <div id="footerPan">
+  	<p class="html"><a href="http://validator.w3.org/check?uri=referer" target="_blank">html</a></p>
+	<p class="css"><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">css</a></p>
+		<ul>
+  		<li><%= link_to 'Home', :web_index%>
+ 	 </ul>
+  	<p class="copyright">raccounts. all right reserved.</p>
+	</div>
+	</div>
+</body>
+</html>
+
+

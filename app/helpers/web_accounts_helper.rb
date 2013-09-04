@@ -1,0 +1,2 @@
+module WebAccountsHelper
+end

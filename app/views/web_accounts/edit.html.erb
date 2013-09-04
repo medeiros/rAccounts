@@ -1,0 +1,8 @@
+<h1>Editing Web Account</h1>
+
+<%= form_for(@entity, url: web_path(@entity), html: {method: "patch"}) do |f| %>
+  <%=render "form", f: f %>
+<% end %>
+
+<br />
+<%= link_to 'Back', web_index_path %>

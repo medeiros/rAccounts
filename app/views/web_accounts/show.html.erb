@@ -1,0 +1,17 @@
+<h1><%=@entity.name%></h1>
+<% unless @entity.description.empty? -%>
+  <i><%=@entity.description -%></i> 
+  <br /><br />
+<% end -%>
+
+<p>
+  <a href="<%=@entity.url%>" target="_blank"><%=@entity.url%></a> 
+  <br />
+  <%=@entity.login%> | <%=@entity.password%>
+</p>
+	
+<p>
+  <%=link_to 'edit', edit_web_path(@entity) %> | 
+  <%= link_to 'delete', web_path(@entity), method: :delete, data: { confirm: 'Are you sure?' } -%>  |  
+  <%= link_to 'back', web_index_path %>
+</p>

@@ -1,0 +1,34 @@
+	<% if @entity.errors.any? %>
+		<div id="errorExplanation">
+			<h2><%= pluralize(@entity.errors.count, "error") %> prohibited 
+			this account from being saved:</h2>
+			<ul>
+				<% @entity.errors.full_messages.each do |msg| -%>
+					<li><%= msg %></li>
+				<% end -%>
+			</ul>
+		</div>
+	<% end -%>
+
+	<p>
+		<%= f.label :name%><br />
+		<%= f.text_field :name%><br />
+	</p>
+	<p>
+		<%= f.label :url%><br />
+		<%= f.text_field :url%><br />
+	</p>
+	<p>
+		<%= f.label :login%><br />
+		<%= f.text_field :login%><br />
+	</p>
+	<p>
+		<%= f.label :password%><br />
+		<%= f.text_field :password%><br />
+	</p>
+	<p>
+		<%= f.label :description%><br />
+		<%= f.text_field :description%><br />
+	</p>
+	<%= f.submit %>
+

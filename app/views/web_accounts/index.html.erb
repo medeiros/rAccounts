@@ -1,0 +1,26 @@
+<h1>Web Accounts</h1>
+
+<%= link_to "New Web Account", new_web_path %>
+<table>
+  <% idx = 0 %>
+  <% @entities.each_with_index do |acc, index| %>
+    <% idx = index % 4 %>
+    <% if index == 0 or idx == 0 %>
+      <tr>
+    <% end %>
+        <td style='width:25%'><%= link_to acc.name, web_path(acc) %></td>
+    <% if idx == 3 %>
+      </tr>
+    <% end %>
+  <% end %>
+
+  <% idx += 1 %>
+  <% if idx % 4 != 0 %>
+    <%until idx > 3 do %>
+      <td>&nbsp;</td>
+      <%idx+=1%>
+    <%end%>
+    </tr>
+  <%end%>
+
+</table>
