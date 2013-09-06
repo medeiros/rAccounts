@@ -1,0 +1,39 @@
+how to convert from Active Record to Mongo (rails 4, mongoid)
+
+steps:
+
+- install mongo
+  - http://docs.mongodb.org/manual/tutorial/getting-started/
+
+- install mongoid
+  - add to Gemfile: gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+  - remove from Gemfile: gem 'mysql'
+
+- config/application.rb
+  - remove 'require rails/all'
+  - add:
+    - require 'action_controller/railtie'
+    - require 'action_mailer/railtie'
+    - require 'rails/test_unit/railtie'
+    - require sprockets/railtie'
+
+- create mongoid.yml
+  - execute: rails g mongoid:config
+
+- change entity
+  - from 
+    class WebAccount < ActiveRecord::Base
+  - to
+    class WebAccount
+      include Mongoid::Document
+
+- change controller
+  - index
+    - from @entities = @entity_type.all 
+    - to @entities = @entity_type.all.entries
+  - edit, show
+    - from @entity = @entity_type.find(params[:id]) 
+    - to @entity = @entity_type.where(:id => params[:id]).first
+  - update
+    - from @entity.update(post_params)
+    - to @entity.update_attributes!(post_params)

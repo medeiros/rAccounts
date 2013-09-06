@@ -6,7 +6,7 @@ class BaseController < ApplicationController
   end
 
   def index
-    @entities = @entity_type.order(:name).all
+    @entities = @entity_type.all.entries
   end
 
   def new
@@ -34,7 +34,7 @@ class BaseController < ApplicationController
   end
   
   def define_entity
-    @entity = @entity_type.find(params[:id])
+    @entity = @entity_type.where(:id => params[:id]).first
   end
 
   def create_entity(pars: nil)
@@ -52,7 +52,7 @@ class BaseController < ApplicationController
 
   def update_entity
     define_entity
-    if @entity.update(post_params)
+    if @entity.update_attributes!(post_params)
       redirect_to action: :show
     else
       render :edit

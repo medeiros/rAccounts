@@ -1,9 +1,12 @@
 <h1>Web Accounts</h1>
 
 <%= link_to "New Web Account", new_web_path %>
+
+<% if not @entities.nil? %>
+
 <table>
-  <% idx = 0 %>
-  <% @entities.each_with_index do |acc, index| %>
+  <% index = idx = 0 %>
+  <% @entities.each do |acc| %>
     <% idx = index % 4 %>
     <% if index == 0 or idx == 0 %>
       <tr>
@@ -12,6 +15,7 @@
     <% if idx == 3 %>
       </tr>
     <% end %>
+    <% index+= 1 %>
   <% end %>
 
   <% idx += 1 %>
@@ -24,3 +28,5 @@
   <%end%>
 
 </table>
+
+<% end %>

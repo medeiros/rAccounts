@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/mongoid/mongoid.git
+  revision: 38de2e96edc8f64fbe3cdbe062f1d91e9feb388d
+  specs:
+    mongoid (4.0.0)
+      activemodel (~> 4.0.0)
+      moped (~> 1.5)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.37)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,8 +62,9 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.24)
     minitest (4.7.5)
+    moped (1.5.1)
     multi_json (1.7.9)
-    mysql (2.9.1)
+    origin (1.1.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -112,7 +123,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
-  mysql
+  mongoid!
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
