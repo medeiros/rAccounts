@@ -21,11 +21,6 @@ change the files below:
     add
       config.action_controller.relative_url_root = '/raccounts'
 
-and precompile assets using
-  rake assets:clean assets:precompile RAILS_ENV=production
-  that way, the sass will be processed and change the image names property (appending the hash).
-  without 'RAILS_ENV=production', the assets will be hashed, but the sass files will not reflect the file name changes.
-
 if you css has image-path('mainbg.jpg'), for instance, the output will be '/raccounts/assets/mainbg[hash].jpg'.
  
      
