@@ -22,5 +22,11 @@ If want to configure on Apache, you must have Passenger. Then, you can add to yo
   RailsBaseURL /raccounts
 </VirtualHost>
 
+Then, you must precompile assets:
 
+<tt>rake rails assets:precompile RAILS_ENV=production</tt>
+
+Now, you can restart Apache:
+
+<tt>sudo systemctl restart httpd</tt>
 
