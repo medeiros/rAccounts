@@ -18,8 +18,10 @@ and then following the URL:
 
 If want to configure on Apache, you must have Passenger. Then, you can add to your conf file the following entry:
 
+<tt>
 <VirtualHost *:80>
   RailsBaseURL /raccounts
 </VirtualHost>
+</tt>
 
 
