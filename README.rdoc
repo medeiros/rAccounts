@@ -1,28 +1,25 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+rAccounts is a application designed to managed personal accounts.
 
-Things you may want to cover:
+* Ruby version 2.0.0p247
 
-* Ruby version
+* Rails version 4.0.0
 
-* System dependencies
+* MongoDB 2.4.6
 
-* Configuration
+you may start this app by running:
 
-* Database creation
+<tt>rails s</tt>
 
-* Database initialization
+and then following the URL:
 
-* How to run the test suite
+<tt>http://localhost:3000/raccounts</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+If want to configure on Apache, you must have Passenger. Then, you can add to your conf file the following entry:
 
-* Deployment instructions
+<VirtualHost *:80>
+  RailsBaseURL /raccounts
+</VirtualHost>
 
-* ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
