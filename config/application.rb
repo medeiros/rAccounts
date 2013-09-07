@@ -25,7 +25,7 @@ module Raccounts
 
     config.action_controller.relative_url_root = '/raccounts'
 
-    config.assets.initialize_on_precompile = true
+    #config.assets.initialize_on_precompile = true
     #config.assets.prefix = '/raccounts/assets'
 
   end
