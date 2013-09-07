@@ -12,16 +12,15 @@ you may start this app by running:
 
 <tt>rails s</tt>
 
-and then following the URL:
+and then by following the URL:
 
 <tt>http://localhost:3000/raccounts</tt>
 
 If want to configure on Apache, you must have Passenger. Then, you can add to your conf file the following entry:
 
-<tt>
 <VirtualHost *:80>
   RailsBaseURL /raccounts
 </VirtualHost>
-</tt>
+
 
 
